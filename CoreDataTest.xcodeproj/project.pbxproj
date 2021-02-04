@@ -16,6 +16,7 @@
 		CE73B6CD25CB6B00004E4E02 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE73B6CB25CB6B00004E4E02 /* LaunchScreen.storyboard */; };
 		CE73B6D825CB6B01004E4E02 /* CoreDataTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE73B6D725CB6B01004E4E02 /* CoreDataTestTests.swift */; };
 		CE73B6E325CB6B01004E4E02 /* CoreDataTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE73B6E225CB6B01004E4E02 /* CoreDataTestUITests.swift */; };
+		CE73B6F425CB80D4004E4E02 /* ListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE73B6F325CB80D4004E4E02 /* ListVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		CE73B6DE25CB6B01004E4E02 /* CoreDataTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoreDataTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE73B6E225CB6B01004E4E02 /* CoreDataTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataTestUITests.swift; sourceTree = "<group>"; };
 		CE73B6E425CB6B01004E4E02 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE73B6F325CB80D4004E4E02 /* ListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 				CE73B6BF25CB6AFF004E4E02 /* SceneDelegate.swift */,
 				CE73B6C125CB6AFF004E4E02 /* ViewController.swift */,
 				CE73B6C325CB6AFF004E4E02 /* Main.storyboard */,
+				CE73B6F325CB80D4004E4E02 /* ListVC.swift */,
 				CE73B6C925CB6B00004E4E02 /* Assets.xcassets */,
 				CE73B6CB25CB6B00004E4E02 /* LaunchScreen.storyboard */,
 				CE73B6CE25CB6B00004E4E02 /* Info.plist */,
@@ -262,6 +265,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE73B6C825CB6AFF004E4E02 /* CoreDataTest.xcdatamodeld in Sources */,
+				CE73B6F425CB80D4004E4E02 /* ListVC.swift in Sources */,
 				CE73B6C225CB6AFF004E4E02 /* ViewController.swift in Sources */,
 				CE73B6BE25CB6AFF004E4E02 /* AppDelegate.swift in Sources */,
 				CE73B6C025CB6AFF004E4E02 /* SceneDelegate.swift in Sources */,
