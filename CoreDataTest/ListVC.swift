@@ -66,6 +66,8 @@ class ListVC: UITableViewController {
         object.setValue(contents, forKey: "contents")
         object.setValue(Date(), forKey: "regdate")
         
+        setLog(object: object, context: context, type: LogType.edit)
+        
         do {
             try context.save()
             list = fetch()
@@ -94,6 +96,17 @@ class ListVC: UITableViewController {
         
     }
     
+    func setLog(object: NSManagedObject, context: NSManagedObjectContext, type: LogType) {
+        
+        let logObject = NSEntityDescription.insertNewObject(forEntityName: "Log", into: context) as! LogMO
+        
+        let obj = (object as! BoardMO)
+        logObject.regdate = obj.regdate
+        logObject.type = type.rawValue
+        
+        obj.addToLogs(logObject)
+    }
+    
     func save(title: String, contents: String) -> Bool {
         
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -105,6 +118,15 @@ class ListVC: UITableViewController {
         object.setValue(title, forKey: "title")
         object.setValue(contents, forKey: "contents")
         object.setValue(Date(), forKey: "regdate")
+        
+        setLog(object: object, context: context, type: LogType.create)
+        
+//        let logObject = NSEntityDescription.insertNewObject(forEntityName: "Log", into: context) as! LogMO
+//
+//        logObject.regdate = now
+//        logObject.type = LogType.create.rawValue
+//
+//        (object as! BoardMO).addToLogs(logObject)
         
         do {
             try context.save()
@@ -179,5 +201,15 @@ class ListVC: UITableViewController {
         }))
         self.present(alert, animated: true)
         
+    }
+    
+    override func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
+        
+        let object = list[indexPath.row]
+        
+        let uvc = self.storyboard?.instantiateViewController(identifier: "LogVC") as! LogVC
+        uvc.board = (object as! BoardMO)
+        
+        self.show(uvc, sender: self)
     }
 }
